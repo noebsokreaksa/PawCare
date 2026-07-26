@@ -1,0 +1,622 @@
+/* ============================================
+   PawCare — pet care page stylesheet
+   Shared tokens: cream #FBF6EE / ink #2B2620 /
+   terracotta #C96A45 / sage #7C8C5E / gold #D9A441
+   Type: Fraunces (display) + Work Sans (body)
+   ============================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   html {
+     scroll-behavior: smooth;
+   }
+
+   body {
+     background-color: #FBF6EE;
+     color: #2B2620;
+     font-family: 'Work Sans', sans-serif;
+     font-size: 16px;
+     line-height: 1.6;
+   }
+
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+
+   h1, h2, h3, h4 {
+     font-family: 'Fraunces', serif;
+     font-weight: 600;
+     line-height: 1.15;
+     color: #2B2620;
+   }
+
+   .eyebrow {
+     font-family: 'Work Sans', sans-serif;
+     font-size: 13px;
+     font-weight: 600;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: #C96A45;
+   }
+
+   .wrap {
+     max-width: 1180px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-left: 24px;
+     padding-right: 24px;
+   }
+
+   section {
+     padding-top: 88px;
+     padding-bottom: 88px;
+   }
+
+   .section-head {
+     max-width: 620px;
+     margin-bottom: 48px;
+   }
+
+   .section-head h2 {
+     font-size: 36px;
+     margin-top: 10px;
+   }
+
+   .section-head p {
+     margin-top: 14px;
+     color: #5A5245;
+     font-size: 17px;
+   }
+
+   :focus-visible {
+     outline: 3px solid #D9A441;
+     outline-offset: 2px;
+   }
+
+   .paw-icon {
+     width: 18px;
+     height: 18px;
+     flex-shrink: 0;
+   }
+
+   /* -------- buttons -------- */
+   .btn {
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     font-family: 'Work Sans', sans-serif;
+     font-weight: 600;
+     font-size: 15px;
+     padding-top: 13px;
+     padding-bottom: 13px;
+     padding-left: 26px;
+     padding-right: 26px;
+     border-radius: 999px;
+     border: 2px solid transparent;
+     cursor: pointer;
+     white-space: nowrap;
+     transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+   }
+
+   .btn:hover {
+     transform: translateY(-2px);
+   }
+
+   .btn-primary {
+     background-color: #C96A45;
+     color: #FBF6EE;
+   }
+
+   .btn-primary:hover {
+     background-color: #B25936;
+   }
+
+   /* -------- header / nav -------- */
+   .site-header {
+     position: sticky;
+     top: 0;
+     z-index: 50;
+     background-color: rgba(251, 246, 238, 0.92);
+     backdrop-filter: blur(6px);
+     border-bottom: 1px solid #E4D9C4;
+   }
+
+   .nav-wrap {
+     padding-top: 18px;
+     padding-bottom: 18px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 20px;
+     position: relative;
+   }
+
+   .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-family: 'Fraunces', serif;
+     font-weight: 700;
+     font-size: 22px;
+     color: #2B2620;
+     flex-shrink: 0;
+   }
+
+   .logo .paw-icon {
+     width: 24px;
+     height: 24px;
+   }
+
+   .nav-links {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     list-style: none;
+   }
+
+   .nav-links a {
+     font-size: 15px;
+     font-weight: 500;
+     padding-top: 8px;
+     padding-bottom: 8px;
+     padding-left: 14px;
+     padding-right: 14px;
+     border-radius: 999px;
+     transition: background-color 0.2s ease, color 0.2s ease;
+   }
+
+   .nav-links a:hover {
+     background-color: #F3ECDD;
+   }
+
+   .nav-links a.active {
+     background-color: #C96A45;
+     color: #FBF6EE;
+   }
+
+   /* the hamburger is a <label> now, not a <button> — no JS needed */
+   .nav-toggle {
+     display: none;
+     cursor: pointer;
+     padding: 6px;
+   }
+
+   .nav-toggle svg {
+     width: 26px;
+     height: 26px;
+   }
+
+   /* the checkbox itself is never visible — it just holds open/closed state */
+   .nav-toggle-check {
+     display: none;
+   }
+
+   /* -------- mobile nav drawer (CSS-only, driven by hidden checkbox) -------- */
+   .nav-toggle-check:checked ~ .nav-links {
+     display: flex;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     right: 0;
+     flex-direction: column;
+     align-items: stretch;
+     background-color: #FBF6EE;
+     border-bottom: 1px solid #E4D9C4;
+     padding: 12px 24px;
+     gap: 4px;
+     z-index: 40;
+   }
+
+   /* ============ PAGE HEADER ============ */
+   .pagehead-hero {
+    position: relative;
+    padding-top: 64px;
+    padding-bottom: 56px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Full hero background image */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay for text readability */
+.pagehead-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+/* Keep your title/content in the same place */
+.pagehead-hero .wrap {
+    position: relative;
+    z-index: 2;
+}
+
+   .hero-badge {
+     width: 64px;
+     height: 64px;
+     border-radius: 20px;
+     background-color: #F3ECDD;
+     font-size: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 20px;
+   }
+
+   .pagehead-hero .eyebrow {
+     display: block;
+     margin-bottom: 12px;
+   }
+
+   .pagehead-hero h1 {
+     font-size: clamp(2rem, 4vw, 2.75rem);
+     max-width: 680px;
+     margin: 0 auto 16px;
+     color: wheat;
+   }
+
+   .pagehead-hero > .wrap > p:not(.eyebrow) {
+     font-size: 17px;
+     /* color: #5A5245; */
+     color: white;
+     max-width: 540px;
+     margin: 0 auto;
+   }
+
+   .pill-nav-row {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 32px;
+   }
+
+   .pill-nav {
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     background-color: #fff;
+     border: 1px solid #E4D9C4;
+     border-radius: 999px;
+     padding: 10px 20px;
+     font-size: 14.5px;
+     font-weight: 600;
+     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+   }
+
+   .pill-nav:hover {
+     background-color: #C96A45;
+     color: #FBF6EE;
+     border-color: #C96A45;
+   }
+
+   /* ============ CATEGORY GRID ============ */
+   .cat-grid {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 18px;
+   }
+
+   .cat-card {
+     background-color: #fff;
+     border: 1px solid #E4D9C4;
+     border-radius: 18px;
+     padding: 26px 20px;
+     text-align: center;
+     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+     /* offsets the anchor jump so the sticky header doesn't cover the card */
+     scroll-margin-top: 100px;
+   }
+
+   .cat-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 12px 26px rgba(43, 38, 32, 0.08);
+   }
+
+   /* highlights whichever card the URL fragment points to — native, no JS */
+   .cat-card:target {
+     border-color: #C96A45;
+     box-shadow: 0 0 0 3px rgba(201, 106, 69, 0.18);
+   }
+
+   .cat-thumb {
+     font-size: 36px;
+     display: block;
+     margin-bottom: 14px;
+   }
+   .cat-thumb i {
+    font-size: 28px;
+    color: #C96A45;
+  }
+   .cat-card h3 {
+     font-size: 17px;
+     margin-bottom: 8px;
+   }
+
+   .cat-card p {
+     font-size: 13.5px;
+     color: #5A5245;
+     line-height: 1.5;
+   }
+
+   /* ============ FEATURE CARDS ============ */
+   .feature-card-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px;
+   }
+
+   .feature-card-v2 {
+     background-color: #fff;
+     border-radius: 20px;
+     overflow: hidden;
+     border: 1px solid #E4D9C4;
+   }
+
+   .fc-image {
+    aspect-ratio: 16 / 9;
+    background-color: #F3ECDD;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* keeps the image inside the rounded corners */
+  }
+  
+  .fc-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the box, crops overflow instead of stretching */
+    display: block;
+  }
+
+   .fc-body {
+     padding: 22px 24px 26px;
+   }
+
+   .fc-body h3 {
+     font-size: 18px;
+     margin-bottom: 8px;
+   }
+
+   .fc-body p {
+     font-size: 14.5px;
+     color: #5A5245;
+   }
+
+   /* ============ ARTICLES ============ */
+   .article-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px;
+   }
+
+   .article-card {
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+   }
+
+.article-thumb {
+  background-color: #EFE6D3;
+  border-radius: 16px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  overflow: hidden; /* keeps the image inside the rounded corners */
+}
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-card .eyebrow{
+  color: #7C8C5E;
+}
+.article-card h3 {
+  font-size: 19px;
+}
+.article-card p {
+  color: #5A5245;
+  font-size: 14px;
+}
+
+   /* ============ NEWSLETTER ============ */
+   .newsletter {
+     background-color: #2B2620;
+     border-radius: 28px;
+     padding: 56px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 32px;
+   }
+
+   .newsletter h2 {
+     color: #FBF6EE;
+     font-size: 28px;
+     max-width: 380px;
+   }
+
+   .newsletter p {
+     color: #C7BEAE;
+     margin-top: 10px;
+     font-size: 15px;
+   }
+
+   .newsletter-form {
+     display: flex;
+     gap: 12px;
+     flex-shrink: 0;
+   }
+
+   .newsletter-form input {
+     font-family: 'Work Sans', sans-serif;
+     font-size: 15px;
+     padding: 14px 20px;
+     border-radius: 999px;
+     border: none;
+     width: 260px;
+     background-color: #F3ECDD;
+     color: #2B2620;
+   }
+
+   .newsletter-form input:focus-visible {
+     outline: 3px solid #D9A441;
+     outline-offset: 2px;
+   }
+
+   /* ============ FOOTER ============ */
+   .site-footer {
+     background-color: #2B2620;
+     color: #C7BEAE;
+     padding-top: 64px;
+     padding-bottom: 40px;
+   }
+
+   .footer-grid {
+     display: grid;
+     grid-template-columns: 1.4fr 1fr 1fr 1fr;
+     gap: 40px;
+     margin-bottom: 48px;
+   }
+
+   .footer-grid .logo {
+     color: #FBF6EE;
+   }
+
+   .footer-grid p {
+     font-size: 14px;
+     margin-top: 14px;
+     max-width: 260px;
+   }
+
+   .footer-col h4 {
+     color: #FBF6EE;
+     font-size: 14px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     margin-bottom: 16px;
+   }
+
+   .footer-col ul {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+   }
+
+   .footer-col ul li a {
+     font-size: 14.5px;
+     transition: color 0.2s ease;
+   }
+
+   .footer-col ul li a:hover {
+     color: #FBF6EE;
+   }
+
+   .footer-bottom {
+     border-top: 1px solid #453F35;
+     padding-top: 24px;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 12px;
+     font-size: 13px;
+     color: #9C9382;
+   }
+
+   /* ============================================
+      Responsive
+      ============================================ */
+   @media (max-width: 1024px) {
+     .cat-grid {
+       grid-template-columns: repeat(3, 1fr);
+     }
+   }
+
+   @media (max-width: 900px) {
+     .feature-card-grid,
+     .article-grid {
+       grid-template-columns: repeat(2, 1fr);
+     }
+
+     .footer-grid {
+       grid-template-columns: 1fr 1fr;
+     }
+
+     .newsletter {
+       flex-direction: column;
+       align-items: flex-start;
+     }
+
+     .newsletter-form {
+       width: 100%;
+     }
+
+     .newsletter-form input {
+       width: 100%;
+     }
+   }
+
+   @media (max-width: 760px) {
+     .nav-links {
+       display: none;
+     }
+
+     .nav-toggle {
+       display: block;
+     }
+   }
+
+   @media (max-width: 680px) {
+     section {
+       padding-top: 56px;
+       padding-bottom: 56px;
+     }
+
+     .cat-grid {
+       grid-template-columns: repeat(2, 1fr);
+     }
+
+     .feature-card-grid,
+     .article-grid,
+     .footer-grid {
+       grid-template-columns: 1fr;
+     }
+
+     .section-head h2 {
+       font-size: 28px;
+     }
+   }
+
+   @media (max-width: 420px) {
+     .cat-grid {
+       grid-template-columns: 1fr;
+     }
+   }

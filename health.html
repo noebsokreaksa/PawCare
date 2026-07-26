@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health — PawCare</title>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="asstes/health.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-wrap">
+    <a href="index.html" class="logo">
+      <svg class="paw-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14.5c-2.5 0-6 2-6 5.2 0 1.4 1 2.3 2.3 2.3.9 0 1.6-.4 2.4-.8.6-.3 1.2-.6 1.3-.6.1 0 .7.3 1.3.6.8.4 1.5.8 2.4.8 1.3 0 2.3-.9 2.3-2.3 0-3.2-3.5-5.2-6-5.2z"/><ellipse cx="5.2" cy="10.5" rx="1.8" ry="2.4"/><ellipse cx="9.4" cy="7" rx="1.8" ry="2.4"/><ellipse cx="14.6" cy="7" rx="1.8" ry="2.4"/><ellipse cx="18.8" cy="10.5" rx="1.8" ry="2.4"/></svg>
+      PawCare
+    </a>
+
+    <input type="checkbox" id="nav-toggle-check" class="nav-toggle-check">
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pet-care.html">Pet Care</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="health.html" class="active">Health</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <label for="nav-toggle-check" class="nav-toggle" aria-label="Toggle navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+  </div>
+</header>
+
+<main>
+  
+  <section class="health-hero">
+    <div class="hero-bg">
+      <img src="images/healthy-pet.jpg" alt="">
+    </div>
+  
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light">Health</p>
+      <h1>Keep your pet healthy at every stage of life</h1>
+      <p class="hero-sub">Protect your pet with trusted health advice, preventive care tips, vaccination guides, and veterinarian-reviewed resources to support their well-being at every stage of life.</p>
+  
+      <form class="health-search" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search health topics — e.g. vaccinations, fleas, dental care" aria-label="Search health topics">
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 2 · TOPIC GRID (7 topics, Parasite Prevention active) ============ -->
+  <section class="topics-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Browse Topics</p>
+          <h2>Health guides by category</h2>
+        </div>
+        <p class="section-sub">Everything you need to keep ahead of your pet's health, from routine care to red-flag symptoms.</p>
+      </div>
+
+      <div class="topic-grid">
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3>Vaccination Guide</h3>
+        </a>
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-bacteria"></i>
+          </div>
+          <h3>Common Diseases</h3>
+        </a>
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-kit-medical"></i>
+          </div>
+          <h3>First Aid Tips</h3>
+        </a>
+
+        <a href="#" class="topic-card is-active">
+          <div class="topic-icon">
+            <i class="fa-solid fa-bug"></i>
+          </div>
+          <h3>Parasite Prevention</h3>
+        </a>
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-tooth"></i>
+          </div>
+          <h3>Dental Care</h3>
+        </a>
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3>Signs Your Pet Needs a Vet</h3>
+        </a>
+
+        <a href="#" class="topic-card">
+          <div class="topic-icon">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3>Preventive Health Care</h3>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · RELATED ARTICLES — 3 CARDS: IMAGE + TITLE + META ============ -->
+  <section class="related-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">From the Blog</p>
+          <h2>Related health articles</h2>
+        </div>
+      </div>
+
+      <div class="article-grid">
+
+        <a href="#" class="article-card">
+          <div class="article-thumb">
+              <img src="images/9c120056784d991c480b640ccd187948.jpg" alt="">
+          </div>
+          <div class="article-body">
+            <h3>What to Expect at Your Puppy's First Vet Visit</h3>
+            <div class="article-meta">
+              <span>Jun 18, 2026</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-thumb">
+            <img src="images/d1096ff686fef387472b42f178780c65.jpg" alt="">
+          </div>
+          <div class="article-body">
+            <h3>Joint Health in Senior Dogs: What to Watch For</h3>
+            <div class="article-meta">
+              <span>Jun 9, 2026</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-thumb">
+            <img src="images/ec0b4fb55825d67b3040e444e06e5aae.jpg" alt="">
+          </div>
+          <div class="article-body">
+            <h3>Flea &amp; Tick Season: A Prevention Checklist</h3>
+            <div class="article-meta">
+              <span>May 30, 2026</span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · NEWSLETTER ============ -->
+  <section class="newsletter-section">
+    <div class="wrap">
+      <div class="newsletter">
+        <h2>Get health reminders in your inbox</h2>
+        <p>Get weekly health tips, vaccination reminders, seasonal care advice, and trusted updates delivered straight to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">
+          <svg class="paw-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14.5c-2.5 0-6 2-6 5.2 0 1.4 1 2.3 2.3 2.3.9 0 1.6-.4 2.4-.8.6-.3 1.2-.6 1.3-.6.1 0 .7.3 1.3.6.8.4 1.5.8 2.4.8 1.3 0 2.3-.9 2.3-2.3 0-3.2-3.5-5.2-6-5.2z"/><ellipse cx="5.2" cy="10.5" rx="1.8" ry="2.4"/><ellipse cx="9.4" cy="7" rx="1.8" ry="2.4"/><ellipse cx="14.6" cy="7" rx="1.8" ry="2.4"/><ellipse cx="18.8" cy="10.5" rx="1.8" ry="2.4"/></svg>
+          PawCare
+        </a>
+        <p>Everything your pet needs to live a happy and healthy life — trusted guides for every kind of companion.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="pet-care.html">Pet Care</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="health.html">Health</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pet Care</h4>
+        <ul>
+          <li><a href="pet-care.html#dog">Dog Care</a></li>
+          <li><a href="pet-care.html#cat">Cat Care</a></li>
+          <li><a href="pet-care.html#bird">Bird Care</a></li>
+          <li><a href="pet-care.html#fish">Fish Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PawCare. All rights reserved.</span>
+      <span>Made with care for pets everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
